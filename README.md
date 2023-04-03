@@ -15,7 +15,7 @@ Voici un exemple en trois frames :
 
 | Frame 1         | Frame 2       | Frame 3                |
 | :-------------: |:-------------:| :---------------------:|
-| X (strike)      | 5/ (spare)    | 9 0 (open frame)       |
+| 10 (strike)      | 7/3 (spare)    | 9/0 (open frame)       |
 
 - La trame 1 est (10 + 5 + 5) = 20
 - La trame 2 est (5 + 5 + 9) = 19
