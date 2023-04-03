@@ -30,18 +30,6 @@ Pour une dixième frame de X1/ (strike et spare), la valeur totale est de 20.
 Pour une dixième frame de XXX (trois strike), la valeur totale est de 30.
 
 ## Objectif
-Écrivez du code pour suivre le score d'une partie de bowling. Cela devrait être en mesure de suivre le score dans un jeu terminé ou en cours.
 
-## Installation
-Récupérez toutes les dépendances JavaScript :
+Vous devez réaliser les tests en suivant la méthodologie TDD. Considérez chaque cas de test un par un. Ecrivez le test associé et le résultat attendu dans le fichier **bowling.spec.js**. Puis ensuite adaptez le code du **bowling.js** en modifiant, ajoutant du code pour correspondre à l'attendu. La base de code qui est donnée est correcte et n'a pas besoin d'être changé pour réussir l'exercice cependant si vous trouvez une alterntive rien ne vous empêche de modifier complètement ce fichier tant que les tests correspondent à l'attendu.
 
-installation de fil
-Exécution de la suite de tests
-Exécutez les tests avec :
-
-test de fil
-Vous pouvez exécuter les tests en continu avec :
-
-test de fil: regarder
-Crédits
-Ceci est basé sur un exercice d'exercice. Cependant, nous avions besoin d'un kata pour pratiquer le TDD, nous avons donc supprimé les tests.
