@@ -25,9 +25,9 @@ Cela signifie que le score total est de 48.
 
 La dixième frame du jeu est un cas particulier. Si quelqu'un lance un strike ou un spare, il obtient respectivement un ou deux lancers supplémentaires. Un lancer supplémentaire existe pour calculer le total de la 10e frame. Marquer un strike ou un spare sur le lancer supplémentaire ne donne pas plus de lancer au joueur. La valeur totale de la 10e frame est le nombre total de quilles renversées.
 
-Pour une dixième frame de X1/ (strike et spare), la valeur totale est de 20.
+Pour une dixième frame de 10/6/4 (strike et spare), la valeur totale est de 20.
 
-Pour une dixième frame de XXX (trois strike), la valeur totale est de 30.
+Pour une dixième frame de 10/10/10 (trois strike), la valeur totale est de 30.
 
 ## Objectif
 
