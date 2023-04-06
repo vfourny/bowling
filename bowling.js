@@ -1,38 +1,81 @@
 export class Game {
-  constructor(){
-    this.frames=[]
-    this.currentFrame = 0
-  }
+    constructor() {
+        this.frames = []
+    }
 
-  // Roll a ball then take in params the number of pins thrown
-  roll(pins){
+    roll(pins) {
+        // 1
+        const frameNumber = this.frames.length + 1
 
-  }
+        if (frameNumber == 1) {
+            const frame = new Frame(pins)
+            this.frames.push(frame)
+            return
+        }
 
-  // Give the total score of the game
-  score(){
+        // dernière frame en cours de création
+        const lastFrame = this.frames[frameNumber - 2]
+        if (lastFrame.isComplete()) {
+            const frame = new Frame(pins)
+            this.frames.push(frame)
+        } else {
+            // on supprime le dernier élément de frames pour le remettre complet
+            const frame = new Frame(...lastFrame.rolls, pins)
+            this.frames.pop()
+            this.frames.push(frame)
+        }
 
-  }
+        if (lastFrame && !lastFrame.isScoreComplete()) {
+            this.frames[frameNumber - 2] = new Frame(...lastFrame.rolls, pins)
+        }
+
+        const secondLastFrame = this.frames[frameNumber - 3]
+        if (secondLastFrame && !secondLastFrame.isScoreComplete()) {
+            this.frames[frameNumber - 3] = new Frame(
+                ...secondLastFrame.rolls,
+                pins
+            )
+        }
+    }
+
+    get score() {
+        return this.frames.reduce((acc, frame) => {
+            return acc + frame.score
+        }, 0)
+    }
 }
 
 export class Frame {
-  constructor(...rolls){
-    this.rolls=rolls
-  }
+    constructor(...rolls) {
+        this.rolls = rolls
+    }
 
-  // Add the pins to the rolls' list of the frame
-  roll(pins){}
+    get score() {
+        return this.rolls.reduce((acc, roll) => {
+            return acc + roll
+        })
+    }
 
-  // get the score of the frame
-  score(){}
+    isComplete = () => {
+        return (
+            (this.isStrike() && this.rolls.length >= 1) ||
+            this.rolls.length >= 2
+        )
+    }
 
-  // To Know if the frame is finished to be played
-  isComplete(){}
+    isScoreComplete = () => {
+        if (this.isStrike() || this.isSpare()) {
+            return this.rolls.length >= 3
+        }
+        return this.rolls.length == 2
+    }
 
-  // To Know if the score of the frame have all his rolls and bonus rolls
-  isScoreComplete(){}
+    isStrike = () => {
+        return this.rolls[0] === 10
+    }
 
-  isStrike()
-
-  isSpare()
+    isSpare = () => {
+        console.log(3)
+        return !this.isStrike() && this.rolls[0] + (this.rolls[1] || 0) == 10
+    }
 }
