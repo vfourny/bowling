@@ -7,7 +7,7 @@ export class Game {
         // 1
         const frameNumber = this.frames.length + 1
 
-        if (frameNumber == 1) {
+                if (frameNumber === 1) {
             const frame = new Frame(pins)
             this.frames.push(frame)
             return
@@ -67,7 +67,7 @@ export class Frame {
         if (this.isStrike() || this.isSpare()) {
             return this.rolls.length >= 3
         }
-        return this.rolls.length == 2
+        return this.rolls.length === 2
     }
 
     isStrike = () => {
@@ -76,6 +76,6 @@ export class Frame {
 
     isSpare = () => {
         console.log(3)
-        return !this.isStrike() && this.rolls[0] + (this.rolls[1] || 0) == 10
+        return !this.isStrike() && this.rolls[0] + (this.rolls[1] || 0) === 10
     }
 }
